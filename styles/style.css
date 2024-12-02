@@ -20,6 +20,22 @@
 	src: url(/fonts/HalvarBreit-Th.ttf);
 }
 
+main section:nth-of-type(2) ul {
+	  display:grid;
+	  gap:1em;
+	  grid-template-columns:1fr 1fr;
+	}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
 header img {
 	width: 3em;
 }
@@ -46,12 +62,126 @@ p {
 	text-transform: uppercase;
 }
 
-/* .clothing-items {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-} */
+body {
+	margin:0;
+	height:100dvh;
+	display:grid;
+	place-items:center;
+  }
+  
+/* button {
+	width:5em;
+	height:5em;
+	
+	appearance:none;
+	border:none;
+	font-size:1em;
+	
+	background-color:white;
+	
+	display:grid;
+	place-items:center;
+	
+	cursor:pointer;
+  }
+  
+  button span {
+	grid-row-start:1;
+	grid-column-start:1;
+	display:block;
+	width:2.5em;
+	height:.25em;
+	background-color:black;
+	
+	transition:.6s;
+  }
+  
+  button span:nth-of-type(1) {
+	translate:0 -1em;
+  }
+  
+  button span:nth-of-type(2) {
+	translate:0;
+  }
+  
+  button span:nth-of-type(3) {
+	translate:0 1em;
+  }
+  
+  button.open span:nth-of-type(1) {
+	translate:0 0;
+	rotate:45deg;
+  }
+  
+  button.open span:nth-of-type(2) {
+	scale:0 1;
+  }
+  
+  button.open span:nth-of-type(3) {
+	translate:0 0;
+	rotate:-45deg;
+  } */
 
-/* ul:nth-of-type(1){
-	display:flex;
-} */
+  .hidden {
+    display: none;
+}
+
+nav ul {
+    display: none; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+	color:black;
+	text-transform: uppercase;
+
+}
+
+button.open, nav ul.open {
+    display: block;
+}
+
+button {
+    width: 5em;
+    height: 5em;
+    appearance: none;
+    border: none;
+    font-size: 1em;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+button span {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: block;
+    width: 2.5em;
+    height: 0.25em;
+    background-color: black;
+    transition: 0.6s;
+}
+
+button span:nth-of-type(1) {
+    transform: translate(0, -1em);
+}
+
+button span:nth-of-type(2) {
+    transform: translate(0);
+}
+
+button span:nth-of-type(3) {
+    transform: translate(0, 1em);
+}
+
+button.open span:nth-of-type(1) {
+    transform: translate(0, 0) rotate(45deg);
+}
+
+button.open span:nth-of-type(2) {
+    transform: scale(0, 1);
+}
+
+button.open span:nth-of-type(3) {
+    transform: translate(0, 0) rotate(-45deg);
+}
