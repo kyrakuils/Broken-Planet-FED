@@ -10,10 +10,3 @@ function toggleButton() {
   menu.classList.toggle("open");
 }
 
-// reload button toggle
-// const button = document.querySelector("ul li");
-
-// const button = document.querySelector("ul li button");
-
-// button.onclick = toggleButton;
-
