@@ -23,21 +23,23 @@ body:has(input[name="moon"][value="dark"]:checked) {
 /* positioning sun icon */
 footer label:nth-of-type(1) {
    position: fixed;
-   top: 60em;
+   top: 65em;
    right: 1.6em;
    display: flex;
    justify-content: flex-end; 
    align-items: center;
+   cursor: pointer;
 }
 
 /* positioning moon icon */
 footer label:nth-of-type(2) {
     position: fixed;
-    top: 60em;
+    top: 65em;
     right: 4.6em;
     display: flex;
     justify-content: flex-end; 
     align-items: center;
+	cursor: pointer;
 }
 
 /* styling dark/light icon */
@@ -55,7 +57,7 @@ label input[type="radio"] {
     display: none;
 }
 
-/* Verberg dark/light mode knoppen bij grotere schermen */
+/* hide dark/light mode laptop size */
 @media (min-width: 64em) {
     footer label:nth-of-type(1), /* Sun icon */
     footer label:nth-of-type(2) /* Moon icon */ {
@@ -64,7 +66,7 @@ label input[type="radio"] {
 }
 
 
-/* Fonts */
+/* fonts */
 @font-face {
     font-family: broken-planetregular;
     src: url(../fonts/HalvarBreit-Rg.ttf);

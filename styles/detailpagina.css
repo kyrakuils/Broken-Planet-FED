@@ -52,6 +52,8 @@ nav ul li a {
     line-height: 3em;
     letter-spacing: 0.0094em;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 nav ul li a:hover {
@@ -71,7 +73,7 @@ header nav button {
     place-items: center;
     z-index: 2;
     background-color: transparent;
-    margin-top: 59.4em;
+    margin-top: 64em;
 }
 
 header nav button span {
@@ -108,7 +110,6 @@ header nav button.open span:nth-of-type(2) {
 header nav button.open span:nth-of-type(3) {
     transform: translate(0, 0) rotate(-45deg);
 }
-
 
 /* back button */
 header a:nth-of-type(2) {
@@ -268,7 +269,7 @@ main a {
 }
 
 /* styling & positioning text add to cart + button add to cart */
-main a + button {
+main a+button {
     font-family: broken-planetregular;
     text-transform: uppercase;
     font-size: 1em;

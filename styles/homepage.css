@@ -1,7 +1,7 @@
 a {
     font-family: broken-planetbold;
     text-decoration: none;
-    color: black;
+    color: var(--color-text);
 }
 
 /* texts are hidden but readable for screenreaders */
@@ -48,37 +48,32 @@ main ul {
 }
 
 /* mobile */
-@media (width > 38em) {
+@media (min-width:38em) {
     main ul {
         grid-template-columns: repeat(2, 1fr);
-        /* 3 columns */
     }
 }
 
 /* laptop */
-@media (width > 64em) {
+@media (min-width:64em) {
     main ul {
         grid-template-columns: repeat(3, 1fr);
-        /* 2 columns */
     }
 
     main ul li {
         font-size: 0.875em;
-        /* smaller font */
     }
 
     main ul li img {
         width: 16em;
-        /* smaller image size */
     }
 
     main ul li p {
         margin: 0.5em 0;
-        /* compact spacing */
     }
 }
 
-/* Algemene styling hamburger menu */
+/* hamburger menu */
 nav ul {
     display: flex;
     flex-direction: column;
@@ -97,7 +92,7 @@ nav ul {
     opacity: 0;
     visibility: hidden;
 
-    /* Animatie hamburger menu */
+    /* animation hamburger menu */
     transform: translateY(100%);
     transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
 }
@@ -108,7 +103,7 @@ nav ul.open {
     transform: translateY(0);
 }
 
-/* Styling tekst hamburger menu */
+/* styling text hamburger menu */
 nav ul li a {
     color: rgb(134, 134, 134);
     text-decoration: none;
@@ -122,20 +117,20 @@ nav ul li a:hover {
     color: rgb(91, 91, 91);
 }
 
-/* Knop hamburger menu */
+/* hamburger menu button */
 header nav button {
     position: fixed;
     bottom: 1em;
     left: 0.5em;
     width: 5em;
-    height: 1em;
+    height: 3em;
     border: none;
     font-size: 1em;
     display: grid;
     place-items: center;
     z-index: 2;
     background-color: transparent;
-    margin-top: 59.4em;
+    margin-top: 63em;
 }
 
 header nav button span {
@@ -143,12 +138,12 @@ header nav button span {
     grid-column-start: 1;
     width: 3em;
     height: 0.14em;
-    background-color: black;
+    background-color: var(--color-text);
     transition: 0.5s;
     display: block;
 }
 
-/* Animatie open/close hamburger menu */
+/* animation open/close hamburger menu */
 header nav button span:nth-of-type(1) {
     transform: translate(0, -1em);
 }
@@ -173,49 +168,54 @@ header nav button.open span:nth-of-type(3) {
     transform: translate(0, 0) rotate(-45deg);
 }
 
-/* Styling voor grotere schermformaten */
+/* laptop size */
 @media (min-width: 64em) {
-        header nav button {
-            display: none;
-        }
-    
-        nav ul {
-            position: static;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-            background-color: transparent;
-            opacity: 1;
-            visibility: visible;
-            transform: none;
-            padding: 0;
-    
-        }
-    
-        nav ul li {
-            margin-bottom: 0.8em;
-        }
-    
-        nav ul li a {
-            font-size: 1em;
-            color: rgb(134, 134, 134);
-            line-height: 3.5em;
-            letter-spacing: 0.0094em;
-        }
+    header nav button {
+        display: none;
     }
+
+    nav ul {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+
+    }
+
+    nav ul li {
+        margin-bottom: 0.8em;
+        right: 3em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        color: rgb(134, 134, 134);
+        line-height: 3.5em;
+        letter-spacing: 0.0094em;
+    }
+
+    header img:nth-of-type(1) {
+        width: 3em;
+    }
+}
 
 /* cart button */
 header button:nth-of-type(1) {
     font-family: broken-planetbold;
-    color: black;
+    color: var(--color-text);
     border: none;
     text-transform: uppercase;
     cursor: pointer;
     background-color: transparent;
     font-size: 1em;
-    position: absolute; 
-    right: 1em; 
+    position: absolute;
+    right: 1em;
     top: 2em;
     z-index: 10;
 }
@@ -231,16 +231,16 @@ main ul li {
     align-items: center;
 }
 
-
 /* styling reload icon */
 main ul li a:nth-of-type(2) img {
     width: 1.8em;
-    margin-left: 10em;
+    margin-left: auto; 
+    margin-right: auto;
     cursor: pointer;
-    position: relative;
-    top: -71em;
+    position: absolute;
+    top: 1em; 
     opacity: 0.7;
-    z-index: 1;
+    z-index: 10; 
 }
 
 main ul li p:nth-of-type(1) {
@@ -262,21 +262,11 @@ main section p:nth-of-type(1) {
     letter-spacing: 0.009375em;
 }
 
-
 /* styling social media icons */
 nav ul li img:nth-of-type(1) {
     position: fixed;
     bottom: 1.4em;
-    right: 13.5em;
-    width: 2em;
-    cursor: pointer;
-}
-
-/* styling instagram icon */
-nav ul li img:nth-of-type(2) {
-    position: fixed;
-    bottom: 1.4em;
-    right: 9.5em;
+    right: 8.7em;
     width: 2em;
     cursor: pointer;
 }
