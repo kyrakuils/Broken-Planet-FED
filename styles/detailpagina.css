@@ -3,23 +3,15 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1em;
     z-index: 2;
 }
 
-header img {
-    grid-column: 2;
-    justify-self: center;
-    width: 2.25em;
-    cursor: pointer;
-}
-
-/* styling clothing items */
-main ul {
-    list-style: none;
+header a {
+    font-family: broken-planetbold;
 }
 
 /* positioning & styling hamburger menu */
@@ -70,15 +62,16 @@ nav ul li a:hover {
 header nav button {
     position: fixed;
     bottom: 1em;
-    left: .5em;
+    left: 0.5em;
     width: 5em;
     height: 3em;
     border: none;
     font-size: 1em;
     display: grid;
     place-items: center;
-    z-index: 1;
+    z-index: 2;
     background-color: transparent;
+    margin-top: 59.4em;
 }
 
 header nav button span {
@@ -116,6 +109,44 @@ header nav button.open span:nth-of-type(3) {
     transform: translate(0, 0) rotate(-45deg);
 }
 
+
+/* back button */
+header a:nth-of-type(2) {
+    font-family: broken-planetregular;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    padding: 0.5em 1em;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+header a:nth-of-type(2):hover {
+    opacity: 0.5;
+}
+
+header a:nth-of-type(2) img {
+    right: 0.5em;
+    width: 1.5em;
+    height: auto;
+}
+
+/* positioning & styling logo */
+header a:nth-of-type(1) img {
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    width: 2.25em;
+    cursor: pointer;
+}
+
 /* cart button */
 header button:nth-of-type(1) {
     font-family: broken-planetbold;
@@ -123,61 +154,164 @@ header button:nth-of-type(1) {
     border: none;
     text-transform: uppercase;
     cursor: pointer;
-    background-color: #fbf7f5;
+    background-color: transparent;
     font-size: 1em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
 }
 
 header button:nth-of-type(1):hover {
     color: grey;
 }
 
-/* back button */
-a {
-    font-family: broken-planetregular;
+main {
+    padding: 2em;
 }
 
-a button {
+/* styling clothing item */
+main img {
+    width: 30em;
+}
+
+/* more photos of the hoodie */
+main ul:nth-of-type(1) {
+    grid-row: 2;
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    padding: 0;
+}
+
+main ul:nth-of-type(1) li {
+    display: flex;
+    gap: 0.5em;
+}
+
+main ul li:nth-of-type(1) img {
+    width: 11em;
+    height: 15em;
+    cursor: pointer;
+}
+
+main ul li:nth-of-type(1) img:hover {
+    opacity: 0.5;
+}
+
+/* text under the image */
+
+/* text my planet zip-up hoodie title */
+main p {
+    display: grid;
+    gap: 1em;
+}
+
+main p:nth-of-type(1) {
+    text-transform: uppercase;
+    text-align: left;
+    grid-column: 1;
+    line-height: 6em;
+}
+
+/* text my planet zip-up hoodie price */
+main p:nth-of-type(2) {
+    color: rgb(134, 134, 134);
+    text-align: right;
+    grid-column: 2;
+    justify-self: end;
+}
+
+/* text my planet zip-up hoodie color & size */
+main p:nth-of-type(3),
+main p:nth-of-type(4) {
+    font-family: broken-planetthin;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    color: rgb(134, 134, 134);
+    text-align: left;
+    grid-column: 1;
+}
+
+/* color button styling & positioning */
+main button {
+    width: 3em;
+    height: 3em;
+    border: 0.15em solid;
+    border-color: #111;
+    border-radius: 50%;
+    background-color: #4d5c4e;
+}
+
+/* styling & positioning size buttons */
+main ul:nth-of-type(2) {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+}
+
+main ul li {
+    display: flex;
+}
+
+main ul li button:hover {
+    background-color: rgb(134, 134, 134);
+    color: #fbf7f5;
+}
+
+/* text size guide */
+main a {
+    font-size: 0.75em;
+    color: rgb(64, 77, 86);
+    font-size: 0.875em;
+    text-transform: uppercase;
+    line-height: 7em;
+}
+
+/* styling & positioning text add to cart + button add to cart */
+main a + button {
     font-family: broken-planetregular;
     text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    border: none;
-    background-color: transparent;
     font-size: 1em;
+    background-color: rgb(134, 134, 134);
+    color: #fbf7f5;
     cursor: pointer;
-    text-decoration: none;
+
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    height: 2.625em;
+}
+
+main a+button:hover {
+    background-color: rgb(103, 103, 103);
+}
+
+/* styling & positioning text about the zip-up hoodie */
+main ol:nth-of-type(1) {
+    list-style: disc;
+    margin-left: 2em;
+    padding: 0;
+    margin-top: 2.5em;
+}
+
+main ol:nth-of-type(1) li {
+    font-family: broken-planetregular;
+    font-size: 0.75em;
+    letter-spacing: 0.0094em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    color: #111;
 }
 
 
-a button:hover {
-    color: grey;
-    /* Hover effect voor de button */
+main ul:nth-of-type(3) {
+    font-family: broken-planetregular;
+    font-size: 0.75em;
+    letter-spacing: 0.0094em;
+    line-height: 3em;
+    list-style: none;
+    padding: 0;
 }
-
-a button img {
-    width: 2.5em;
-    /* Stel de breedte van de afbeelding in */
-    height: auto;
-    /* Zorg ervoor dat de hoogte van de afbeelding zich proportioneel aanpast */
-}
-
-
-
-
-/* header button:nth-of-type(2) {
-	font-family: broken-planetbold;
-	color: black;
-	border: none;
-	text-transform: uppercase;
-	cursor: pointer;
-	background-color: #fbf7f5;
-	font-size: 1em;
-}
-
-header button:nth-of-type(2):hover {
-	color: grey;
-} */
 
 /* styling tiktok icon */
 nav ul li img:nth-of-type(1) {
@@ -219,10 +353,12 @@ nav ul li img:hover {
     opacity: 0.6;
 }
 
+/* footer positioning & styling */
 footer ul {
     list-style: none;
 }
 
+/* footer styling & positioning tiktok icon */
 footer ul li img:nth-of-type(1) {
     position: fixed;
     bottom: 1.4em;
@@ -231,6 +367,7 @@ footer ul li img:nth-of-type(1) {
     cursor: pointer;
 }
 
+/* footer styling & positioning instagram icon */
 footer ul li img:nth-of-type(2) {
     position: fixed;
     bottom: 1.4em;
@@ -239,6 +376,7 @@ footer ul li img:nth-of-type(2) {
     cursor: pointer;
 }
 
+/* footer styling & positioning pinterest icon */
 footer ul li img:nth-of-type(3) {
     position: fixed;
     bottom: 1.4em;
@@ -247,6 +385,7 @@ footer ul li img:nth-of-type(3) {
     cursor: pointer;
 }
 
+/* footer styling & positioning mail icon */
 footer ul li img:nth-of-type(4) {
     position: fixed;
     bottom: 1em;
@@ -259,87 +398,13 @@ footer ul li img:hover {
     opacity: 0.6;
 }
 
-
-
-
-main img {
-    width: 30em;
-}
-
-main button:nth-of-type(1) {
-    width: 3em;
-    height: 3em;
-    border: 0.15em solid;
-    border-color: #111;
-    border-radius: 50%;
-    background-color: #2e3b2f;
-}
-
-/* tekst onder image */
-
-main p:nth-of-type(1) {
-    text-transform: uppercase;
-    text-align: left;
-    grid-column: 1;
-}
-
-main p:nth-of-type(2) {
-    color: rgb(134, 134, 134);
-    text-align: right;
-    grid-column: 2;
-}
-
-main p:nth-of-type(3),
-main p:nth-of-type(4) {
-    color: rgb(134, 134, 134);
-    text-align: left;
-    grid-column: 1;
-}
-
-
-/* Tekst 'size' over de volledige breedte van de knoppen */
-main p:nth-of-type(4) {
-    grid-column: 1 / 7; /* Laat de tekst 'size' over alle kolommen uitlijnen */
-}
-
-main {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 gelijke kolommen */
-    grid-template-rows: auto auto auto auto; /* 4 rijen */
-    gap: 1em;
-}
-
-/* Knoppen uitlijnen in het grid */
-main button:nth-of-type(1) {
-    grid-column: 1; /* Eerste knop in de eerste kolom */
-}
-
-main button:nth-of-type(2) {
-    grid-column: 2; /* Tweede knop in de tweede kolom */
-}
-
-main button:nth-of-type(3) {
-    grid-column: 3; /* Derde knop in de derde kolom */
-}
-
-main button:nth-of-type(4) {
-    grid-column: 4; /* Vierde knop in de vierde kolom */
-}
-
-main button:nth-of-type(5) {
-    grid-column: 5; /* Vijfde knop in de vijfde kolom */
-}
-
-main button:nth-of-type(6) {
-    grid-column: 6; /* Zesde knop in de zesde kolom */
-}
-
-main button {
-    display: inline-flex;
+main ul li button {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 3em;
     height: 3em;
+
     border: 0.1em solid;
     border-color: rgb(134, 134, 134);
     border-radius: 50%;
@@ -349,33 +414,41 @@ main button {
     font-size: 0.75em;
     text-transform: uppercase;
     cursor: pointer;
+    margin: 0;
 }
 
-button:hover {
+main ul li button:hover {
     background-color: rgb(134, 134, 134);
     color: #fbf7f5;
 }
 
-/* more photos of the hoodie */
-main ul {
-    grid-row: 2; 
-    list-style: none; 
-    display: flex; 
-    gap: 1em; 
-    padding: 0; 
-}
+@media (min-width: 64em) {
+    header nav button {
+        display: none;
+    }
 
-main ul li {
-    display: flex; 
-    gap: 0.5em; 
-}
+    nav ul {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
 
-main ul li img {
-    width: 11em; 
-    height: 15em;
-    cursor: pointer; 
-}
+    }
 
-main ul li img:hover {
-    opacity: 0.5;
+    nav ul li {
+        margin-bottom: 0.8em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        color: rgb(134, 134, 134);
+        line-height: 3.5em;
+        letter-spacing: 0.0094em;
+    }
 }
