@@ -1,104 +1,97 @@
 *,
 *::after,
 *::before {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-	
-	--color-text: #111;
-	--color-background: #fbf7f5;
-}
-
-/* :root {
     --color-text: #111;
     --color-background: #fbf7f5;
-    --bg-light: lightblue;
-    --bg-dark: midnightblue;
-    --clr-light: midnightblue;
-    --clr-dark: lightblue;
-
-    color-scheme: light dark;
 }
-
-:root:has([value="light"]:checked) {
-    color-scheme: light;
+/* light theme */
+body:has(input[name="moon"][value="light"]:checked) {
     --color-text: #111;
     --color-background: #fbf7f5;
 }
 
-:root:has([value="dark"]:checked) {
-    color-scheme: dark;
+/* dark theme */
+body:has(input[name="moon"][value="dark"]:checked) {
     --color-text: #fff;
     --color-background: #222;
-} */
-
-
-/* used fonts */
-@font-face {
-	font-family: broken-planetregular;
-	src: url(../fonts/HalvarBreit-Rg.ttf);
 }
 
-@font-face {
-	font-family: broken-planetbold;
-	src: url(../fonts/HalvarBreit-Bd.ttf);
+/* positioning sun icon */
+footer label:nth-of-type(1) {
+   position: fixed;
+   top: 32em;
+   right: 1.6em;
+   display: flex;
+   justify-content: flex-end; 
+   align-items: center;
+   cursor: pointer;
 }
 
-@font-face {
-	font-family: broken-planetthin;
-	src: url(../fonts/HalvarBreit-Th.ttf);
-}
-
-body {
-	margin: 0;
-	height: 100dvh;
-	display: grid;
-	place-items: center;
-	background-color: #fbf7f5;
-	font-family: broken-planetregular;
-}
-
-/* positioning & styling hamburger menu */
-nav ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* positioning moon icon */
+footer label:nth-of-type(2) {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fbf7f5;
-    list-style: none;
-    text-transform: uppercase;
-    padding: 0;
+    top: 32em;
+    right: 4.6em;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+	cursor: pointer;
+}
+
+/* styling dark/light icon */
+label img:nth-of-type(1) {
+    width: 2.5em;
+}
+
+label input[type="radio"]:not(:checked) + img {
+    opacity: 0.5; 
+    transform: scale(0.9); 
+}
+
+/* radio buttons hidden */
+label input[type="radio"] {
+    display: none;
+}
+
+/* hide dark/light mode laptop size */
+@media (min-width: 64em) {
+    footer label:nth-of-type(1), /* Sun icon */
+    footer label:nth-of-type(2) /* Moon icon */ {
+        display: none;
+    }
+}
+
+
+/* fonts */
+@font-face {
+    font-family: broken-planetregular;
+    src: url(../fonts/HalvarBreit-Rg.ttf);
+}
+
+@font-face {
+    font-family: broken-planetbold;
+    src: url(../fonts/HalvarBreit-Bd.ttf);
+}
+
+@font-face {
+    font-family: broken-planetthin;
+    src: url(../fonts/HalvarBreit-Th.ttf);
+}
+
+/* General styles */
+body {
     margin: 0;
-    opacity: 0;
-    visibility: hidden;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    font-family: broken-planetregular;
 
-    /* animation hamburger menu */
-    transform: translateY(100%);
-    transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* styling text hamburger menu */
-nav ul li a {
-    color: rgb(134, 134, 134);
-    text-decoration: none;
-    font-size: 1em;
-    line-height: 3em;
-    letter-spacing: 0.0094em;
-    text-align: center;
-}
-
-nav ul li a:hover {
-    color: rgb(91, 91, 91);
-}
