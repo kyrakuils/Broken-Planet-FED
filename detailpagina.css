@@ -81,21 +81,21 @@ header nav button {
     bottom: 1em;
     left: 0.5em;
     width: 5em;
-    height: 3em;
+    margin-top: 60em;
     border: none;
     font-size: 1em;
     display: grid;
     place-items: center;
     z-index: 2;
     background-color: transparent;
-    margin-top: 64em;
+    
 }
 
 header nav button span {
     grid-row-start: 1;
     grid-column-start: 1;
     width: 3em;
-    height: 0.14em;
+    height: 0.125em;
     background-color: black;
     transition: 0.5s;
     display: block;
@@ -185,16 +185,6 @@ main {
     padding: 2em;
 }
 
-/* text under the image */
-
-/* text my planet zip-up hoodie title */
-/* main p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-
 /* text my planet zip-up hoodie color & size */
 main p:nth-of-type(1),
 main p:nth-of-type(2) {
@@ -216,12 +206,10 @@ main button {
     cursor: pointer;
 }
 
-
 /* text size guide */
 main a {
-    font-size: 0.75em;
-    color: rgb(64, 77, 86);
     font-size: 0.875em;
+    color: rgb(64, 77, 86);
     text-transform: uppercase;
     line-height: 7em;
 }
@@ -246,15 +234,12 @@ main a+button:hover {
 }
 
 /* styling & positioning text about the zip-up hoodie */
-
 main p {
-    font-family:broken-planetregular;
     font-size: 0.75em;
     letter-spacing: 0.0094em;
 }
 
 main ul li {
-    font-family: broken-planetregular;
     font-size: 0.75em;
     letter-spacing: 0.0094em;
     line-height: 2em;
@@ -496,17 +481,33 @@ main section h1 {
 
 
 /* button sizes */
+div {
+    margin-top: 0.5em;
+}
 
 form label button {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+
     text-transform: uppercase; 
     font-size: 0.75em; 
+    font-family: broken-planetthin;
+
     color: rgb(134, 134, 134);
     background-color: #fbf7f5;
     border-color: rgb(134, 134, 134);
+    border: 0.0625rem solid rgb(134, 134, 134); 
     padding: 0.5em 1em; 
+    cursor: pointer;
+}
+
+form label input[type="radio"]:checked + button {
+    color: #fbf7f5;
+    background-color: rgb(134, 134, 134); 
 }
 
 form label button:hover {
-    color: white;
+    color: #fbf7f5;
     background-color: rgb(134, 134, 134);
 }

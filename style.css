@@ -7,16 +7,18 @@
 :root {
     --color-text: #111;
     --color-background: #fbf7f5;
+    --color-light: rgb(134, 134, 134);
 }
+
 /* light theme */
 body:has(input[name="moon"][value="light"]:checked) {
-    --color-text: #111;
+    --color-text: #222;
     --color-background: #fbf7f5;
 }
 
 /* dark theme */
 body:has(input[name="moon"][value="dark"]:checked) {
-    --color-text: #fff;
+    --color-text: #fbf7f5;
     --color-background: #222;
 }
 
@@ -57,15 +59,6 @@ label input[type="radio"] {
     display: none;
 }
 
-/* hide dark/light mode laptop size */
-@media (min-width: 64em) {
-    footer label:nth-of-type(1), /* Sun icon */
-    footer label:nth-of-type(2) /* Moon icon */ {
-        display: none;
-    }
-}
-
-
 /* fonts */
 @font-face {
     font-family: broken-planetregular;
@@ -82,7 +75,7 @@ label input[type="radio"] {
     src: url(../fonts/HalvarBreit-Th.ttf);
 }
 
-/* General styles */
+/* general styles */
 body {
     margin: 0;
     height: 100dvh;
