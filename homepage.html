@@ -13,16 +13,25 @@
 
 	<link rel="icon" type="image/svg+xml" href="images/logo-broken-planet.svg">
 </head>
-
 <body style="overflow: auto;">
-	<h1 class="visually-hidden">broken planet homepage</h1>
-
 	<header>
 		<a href="homepage.html">
 			<img src="images/logo-broken-planet.svg" alt="broken-planet">
 		</a>
 
 		<button>cart</button>
+
+		<!--light mode-->
+		<label>
+			<input type="radio" name="moon" value="light" checked>
+			<img src="icons-footer/light-mode.png" alt="Light mode icon">
+		</label>
+
+		<!--dark mode-->
+		<label>
+			<input type="radio" name="moon" value="dark">
+			<img src="icons-footer/dark-mode.png" alt="Dark mode icon">
+		</label>
 
 		<nav>
 			<button>
@@ -38,15 +47,14 @@
 				<li><a href="#">foundation</a></li>
 				<li><a href="#">terms</a></li>
 				<li><a href="#">shipping prices</a></li>
-				<li>
-					<img src="icons-footer/tiktok-icon.png" alt="tiktok-icon">
+
+				<li><img src="icons-footer/tiktok-icon.png" alt="tiktok-icon">
 					<img src="icons-footer/instagram-icon.png" alt="instagram-icon">
 					<img src="icons-footer/pinterest-icon.png" alt="pinterest-icon">
 					<img src="icons-footer/mail-icon.svg" alt="mail-icon">
 				</li>
 			</ul>
 		</nav>
-		
 	</header>
 
 	<main>
@@ -144,11 +152,8 @@
 				</li>
 			</ul>
 		</section>
-			
 
 	</main>
-
-	<footer>
 
 		<footer>
 			<ul>
@@ -160,21 +165,6 @@
 				</li>
 			</ul>
 		</footer>
-
-	<!--light mode-->
-		<label>
-			<input type="radio" name="moon" value="light" checked>
-			<img src="icons-footer/light-mode.png" alt="Light mode icon">
-		</label>
-
-		<!--dark mode-->
-		<label>
-			<input type="radio" name="moon" value="dark">
-			<img src="icons-footer/dark-mode.png" alt="Dark mode icon">
-		</label>
-	</footer>
-
-	
 
 	<script defer src="scripts/script.js"></script>
 </body>

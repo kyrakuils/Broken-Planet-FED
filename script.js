@@ -9,4 +9,3 @@ function toggleButton() {
   button.classList.toggle("open");
   menu.classList.toggle("open");
 }
-

@@ -1,3 +1,7 @@
+* {
+	box-sizing:border-box;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -124,6 +128,42 @@ header nav button.open span:nth-of-type(2) {
 
 header nav button.open span:nth-of-type(3) {
     transform: translate(0, 0) rotate(-45deg);
+}
+
+/* laptop size */
+@media (min-width: 64em) {
+    header nav button {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 0.8em;
+        right: 3em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        color: rgb(134, 134, 134);
+        line-height: 3.5em;
+        letter-spacing: 0.0094em;
+    }
+
+    header img:nth-of-type(1) {
+        width: 3em;
+    }
 }
 
 /* back button */
@@ -331,61 +371,6 @@ footer ul li img:hover {
     opacity: 0.6;
 }
 
-/* main ul li button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3em;
-    height: 3em;
-
-    border: 0.1em solid;
-    border-color: rgb(134, 134, 134);
-    border-radius: 50%;
-    background-color: #fbf7f5;
-    color: rgb(134, 134, 134);
-    font-family: broken-planetthin;
-    font-size: 0.75em;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin: 0;
-}
-
-main ul li button:hover {
-    background-color: rgb(134, 134, 134);
-    color: #fbf7f5;
-} */
-
-@media (min-width: 64em) {
-    header nav button {
-        display: none;
-    }
-
-    nav ul {
-        position: static;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        background-color: transparent;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        padding: 0;
-
-    }
-
-    nav ul li {
-        margin-bottom: 0.8em;
-    }
-
-    nav ul li a {
-        font-size: 1em;
-        color: rgb(134, 134, 134);
-        line-height: 3.5em;
-        letter-spacing: 0.0094em;
-    }
-}
-
 div {
 	display:grid;
 	width:25em;
@@ -462,11 +447,7 @@ form label:has( :checked ) img {
 	opacity:1;
 }
 
-form label:has( :focus ) {
-	/* zelf wat moois bedenken - ik ben beledigd */
-}
-
-/* voor de 100 pound en titel op een lijn */
+/* price and title */
 main section {
     display: flex;
     justify-content: space-between;
@@ -478,7 +459,6 @@ main section h1 {
     text-transform: uppercase;
     font-size: 0.75em;
 }
-
 
 /* button sizes */
 div {

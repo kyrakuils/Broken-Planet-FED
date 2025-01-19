@@ -28,7 +28,13 @@ header {
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 1em;
+    z-index: 1;
+}
+
+main {
+    position: relative;
     z-index: 2;
+    margin-top: 5em; 
 }
 
 header img:nth-of-type(1) {
@@ -41,7 +47,7 @@ header img:nth-of-type(1) {
 main ul {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto; 
     gap: 1em;
     padding: 0;
@@ -96,7 +102,7 @@ main ul {
     }
 }
 
-/* hamburger menu */
+/* positioning & styling hamburger menu */
 nav ul {
     display: flex;
     flex-direction: column;
@@ -107,7 +113,7 @@ nav ul {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-background);
+    background-color: #fbf7f5;
     list-style: none;
     text-transform: uppercase;
     padding: 0;
@@ -128,45 +134,42 @@ nav ul.open {
 
 /* styling text hamburger menu */
 nav ul li a {
-    color: var(--color-light);
+    color: rgb(134, 134, 134);
     text-decoration: none;
     font-size: 1em;
     line-height: 3em;
     letter-spacing: 0.0094em;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 nav ul li a:hover {
-    color: rgb(87, 87, 87);
+    color: rgb(91, 91, 91);
 }
 
-/* alleen "products" in donkere kleur */
-nav ul li a[href="homepage.html"]:first-child {
-    color: rgb(0, 0, 0)
-}
-
-/* hamburger menu button */
+/* button hamburger menu */
 header nav button {
     position: fixed;
     bottom: 1em;
     left: 0.5em;
     width: 5em;
-    height: 3em;
+    margin-top: 64em;
     border: none;
     font-size: 1em;
     display: grid;
     place-items: center;
     z-index: 2;
     background-color: transparent;
-    margin-top: 57em;
+    
 }
 
 header nav button span {
     grid-row-start: 1;
     grid-column-start: 1;
     width: 3em;
-    height: 0.14em;
-    background-color: var(--color-text);
+    height: 0.125em;
+    background-color: black;
     transition: 0.5s;
     display: block;
 }
@@ -213,7 +216,6 @@ header nav button.open span:nth-of-type(3) {
         visibility: visible;
         transform: none;
         padding: 0;
-
     }
 
     nav ul li {
@@ -270,32 +272,6 @@ main ul li a:nth-of-type(2) img {
     z-index: 10; 
     transition: all 0.3s ease; 
 }
-
-
-/* mobile */
-@media (min-width: 38em) {
-    main ul li a:nth-of-type(2) img {
-        width: 1.5em; 
-        top: 5%; 
-    }
-}
-
-/* tablets */
-@media (min-width: 44em) {
-    main ul li a:nth-of-type(2) img {
-        width: 1.6em; 
-        top: 8%; 
-    }
-}
-
-/* laptops */
-@media (min-width: 64em) {
-    main ul li a:nth-of-type(2) img {
-        width: 1.6em; 
-        top: 8%; 
-    }
-}
-
 
 main ul li p:nth-of-type(1) {
     text-align: center;
@@ -417,7 +393,6 @@ li label img:hover {
     opacity: 0.4;
 }
 
-
 /* footer positioning & styling */
 footer ul {
     list-style: none;
@@ -462,4 +437,3 @@ footer ul li a:nth-of-type(4) img {
 footer ul li img:hover {
     opacity: 0.6;
 }
-
